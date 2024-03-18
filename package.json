@@ -1,0 +1,43 @@
+{
+  "name": "dynamic-jspdf-receipt",
+  "version": "1.0.2",
+  "description": "Customize receipts generator pdf",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "build": "webpack"
+  },
+  "author": "Anda",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.2",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "peerDependencies": {
+    "jspdf": "^2.5.1",
+    "jspdf-autotable": "^3.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PandasProperty/dynamic-jspdf-receipt.git"
+  },
+  "keywords": [
+    "pdf",
+    "receipe",
+    "jspdf",
+    "invoice"
+  ],
+  "bugs": {
+    "url": "https://github.com/PandasProperty/dynamic-jspdf-receipt/issues"
+  },
+  "homepage": "https://github.com/PandasProperty/dynamic-jspdf-receipt/blob/master/README.md"
+}

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "CommonJS",
+    "lib": ["es2016"],
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "declarationDir": "./dist",
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}
