@@ -12,7 +12,7 @@ interface Logo {
   ratioWidthPerHeigh: number
 }
 
-export interface DynamicreceiptProps {
+export interface GenerateReceiptOptions {
   autoTableUserOptions?: UserOptions
   logo?: Logo
   companyDetails: Field[]
@@ -26,4 +26,7 @@ export interface DynamicreceiptProps {
   ammountDetails?: Field[]
 }
 
-export type generateReceipt = (doc: jsPDF, dynamicreceiptProps: DynamicreceiptProps) => void;
+export type generateReceipt = (
+  doc: jsPDF,
+  options: GenerateReceiptOptions
+) => void;

@@ -22,7 +22,6 @@ const generatePdfReceipt: generateReceipt = (
     ammountDetails,
     autoTableUserOptions
   }) => {
-  doc.setFont('helvetica');
   doc.setFontSize(FONT_SIZE);
   doc.setTextColor(...FONT_COLOR);
 
