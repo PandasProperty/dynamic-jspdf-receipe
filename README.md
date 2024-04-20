@@ -2,7 +2,7 @@
 
 **Generate PDF tables with Javascript**
 
-This jsPDF plugin adds the ability to generate PDF tables either by parsing HTML tables or by using Javascript data directly.
+Using jsPDF and jsPDF-AutoTable, this library is both browser and node compatible. It is used on a doc created by jsPDF, a library to generate PDFs in JavaScript.
 
 ![sample javascript table pdf](sample.png)
 
@@ -14,9 +14,11 @@ Get jsPDF, jsPDF-AutoTable and this plugin by doing one of these things:
 
 ## Usage
 
+# React
+
 ```js
-import jsPDF from 'jspdf'
-import generatePdfreceipt from 'dynamic-jspdf-receipt'
+import JsPDF from 'jspdf'
+import { generatePdfReceipt } from 'dynamic-jspdf-receipt'
 
 const doc = new JsPDF({
   compress: true,
@@ -31,15 +33,15 @@ generatePdfReceipt(doc, {
   companyDetails: [
     {
       name: 'Company name',
-      value: 'Yalla Bus',
+      value: 'Anda Tech Solutions',
     },
     {
       name: 'Company address',
-      value: 'Baghdad, str My street',
+      value: 'Bucharest, Romania',
     },
     {
       name: 'Company phone',
-      value: YALLA_BUS_PHONE_NUMBER,
+      value: '(+XX)XXX-XXX-XXX',
     },
   ],
   receiptDetails: [
@@ -53,26 +55,93 @@ generatePdfReceipt(doc, {
     },
   ],
   purchaseTable: {
-    headers: ['Ticket', 'Quantity', 'Cost'],
+    headers: ['Service', 'Quantity', 'Cost'],
     items: [
-      ['Baghdad - Basra', '2', '12$'],
-      ['Basra - Baghdad', '2', '14$'],
+      ['Software development solution', '1', '100000$'],
+      ['Additional Consulting', '1', '100000$'],
     ],
     headerColor: [0, 95, 173],
   },
-  additionalInfo: ['Test footer'],
+  additionalInfo: ['Thank you for choosing our services'],
   ammountDetails: [
     {
       name: 'Total Cost',
-      value: '52$',
+      value: '20000$',
     },
     {
       name: 'Discount',
-      value: '4$',
+      value: '1000$',
     },
     {
       name: 'Total Cost',
-      value: '48$',
+      value: '19000$',
+    },
+  ],
+});
+
+doc.save('table.pdf')
+```
+
+# Node
+```js
+const { jsPDF } = require("jspdf");
+const { generatePdfReceipt } = require('dynamic-jspdf-receipt');
+
+const doc = new jsPDF({
+  compress: true,
+});
+
+generatePdfReceipt(doc, {
+  logo: {
+    source: images[language],
+    extension: 'PNG',
+    ratioWidthPerHeigh: ratioWidthPerHeigh[language],
+  },
+  companyDetails: [
+    {
+      name: 'Company name',
+      value: 'Anda Tech Solutions',
+    },
+    {
+      name: 'Company address',
+      value: 'Bucharest, Romania',
+    },
+    {
+      name: 'Company phone',
+      value: '(+XX)XXX-XXX-XXX',
+    },
+  ],
+  receiptDetails: [
+    {
+      name: 'Receipe nr.',
+      value: '00000001',
+    },
+    {
+      name: 'Receipe date',
+      value: dayjs(new Date()).format('ddd, DD MMM YYYY, HH:MM'),
+    },
+  ],
+  purchaseTable: {
+    headers: ['Service', 'Quantity', 'Cost'],
+    items: [
+      ['Software development solution', '1', '100000$'],
+      ['Additional Consulting', '1', '100000$'],
+    ],
+    headerColor: [0, 95, 173],
+  },
+  additionalInfo: ['Thank you for choosing our services'],
+  ammountDetails: [
+    {
+      name: 'Total Cost',
+      value: '20000$',
+    },
+    {
+      name: 'Discount',
+      value: '1000$',
+    },
+    {
+      name: 'Total Cost',
+      value: '19000$',
     },
   ],
 });

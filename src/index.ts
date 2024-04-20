@@ -12,7 +12,7 @@ const FONT_COLOR = [60, 60, 60] as const;
 
 const LOGO_HEIGHT = 50;
 
-const generatePdfReceipt: generateReceipt = (
+export const generatePdfReceipt: generateReceipt = (
   doc, {
     logo,
     companyDetails,
@@ -136,5 +136,3 @@ const generatePdfReceipt: generateReceipt = (
     });
   }
 }
-
-export default generatePdfReceipt;

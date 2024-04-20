@@ -1,12 +1,14 @@
 {
   "name": "dynamic-jspdf-receipt",
-  "version": "1.0.2",
+  "version": "1.0.9",
   "description": "Customize receipts generator pdf",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "tsc": "tsc --noEmit",
-    "build": "webpack"
+    "build": "webpack",
+    "build:production": "webpack --mode production",
+    "prepublishOnly": "rm -rf dist & npm run build:production"
   },
   "author": "Anda",
   "license": "ISC",
